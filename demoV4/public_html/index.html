@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    <title>Very simple integration example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://developer.elia.gg/eliaexpresspay/js/eliaexpresspay.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div><button type="button" onClick="eliaExpressPay.init('eliaexpresspaycontainer')">Pay 10 euros with Elia Express
+            Pay </button></div>
+    <div id='eliaexpresspaycontainer' style="height:650px;width:400px" onclick="closeWindow();"></div>
+    <script>
+        initExpressPay();
+
+        function initExpressPay() {
+            eliaExpressPay.partnerKey = 'nYkiBAdGFY';
+            eliaExpressPay.integrationId = '605ba25c2fc0302db1e12a5b';
+
+            eliaExpressPay.pageTitle = 'Web tournament';
+            eliaExpressPay.checkoutTitle = '';
+            eliaExpressPay.userLogo = '';
+            eliaExpressPay.authenticationTitle = 'Authentication Section Title';
+            eliaExpressPay.paymentTitle = 'Payment Methods';
+            eliaExpressPay.paymentReturnTitle = 'Payment Confirmation';
+            eliaExpressPay.addInputOne = 'false';
+            eliaExpressPay.addInputOneTitle = 'Input';
+            eliaExpressPay.addInputTwo = 'false';
+            eliaExpressPay.addInputTwoTitle = 'Input';
+            eliaExpressPay.paymentMessage = 'You will receive a confirmation by SMS in the phone number you used to pay';
+            eliaExpressPay.confirmationMessage = 'Thank you! We are looking forward to see you in our event';
+            eliaExpressPay.customCssAddress = 'https://nilabhanand.github.io/express-pay-demoV4/style.css';
+            eliaExpressPay.urlSuccess = 'http://localhost:8383/demov3/index.html';
+            eliaExpressPay.urlCancel = 'http://localhost:8383/demov3/index.html';
+            eliaExpressPay.mode = 'sandbox';
+
+            eliaExpressPay.onClose(backToStore);
+            exchangeRate('EUR', 10.00);
+        }
+
+        function backToStore(event) {
+            document.getElementById('eliaexpresspaycontainer').style.display = 'none';
+        }
+
+        function closeWindow() {
+            document.getElementById('eliaexpresspaycontainer').style.display = 'none';
+        }
+
+        function exchangeRate(currency, value) {
+            eliaExpressPay.originalAmount = value;
+            eliaExpressPay.originalCurrency = currency;
+            var url = 'https://developer.elia.gg/api/ExchangeRate.php?xch=true&currency=' + currency + '&amount=' + value;
+            fetch(url, {
+                method: "GET"
+            })
+                .then(response => response.json())
+                .then(function (data) {
+                    var value = data.convertedValue;
+                    eliaExpressPay.amount = value;
+                    if (eliaExpressPay.amount < 1.00) {
+                        alert("This value is less than USD $1.00, please choose other currency");
+                    }
+                });
+        }
+
+    </script>
+</body>
+
+</html>
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
