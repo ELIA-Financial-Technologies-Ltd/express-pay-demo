@@ -39,6 +39,8 @@ DEALINGS IN THE SOFTWARE.
         <script src="js/jquery.min.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="https://developer.elia.gg/eliaexpresspay/js/eliaexpresspay.js" type="text/javascript"></script>
+        
+        <!-- <script src="http://localhost/eliaexpresspay/js/eliaexpresspay.js" type="text/javascript"></script> -->
         <script src="js/PartnerCheckout.js" type="text/javascript"></script> 
 
         <script charset="utf-8" src="js/theme/1.7e135fed.chunk.js"></script>
@@ -209,7 +211,7 @@ DEALINGS IN THE SOFTWARE.
                                             </form>
                                     </div>
  
-                                    <div id='eliaexpresspaycontainer' style="height:650px;width:400px"></div>                                            
+                                    <div id='eliaexpresspaycontainer' style="height:750px;width:400px"></div>                                            
                                 </div>
                             </section>  
                         </main>

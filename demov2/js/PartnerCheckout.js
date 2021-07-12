@@ -21,7 +21,8 @@
  */
 
 $(document).ready(function ($) {
-    const __ELIA_EXPRESS_PAY_BASE_URL = 'https://developer.elia.gg';
+    //const __ELIA_EXPRESS_PAY_BASE_URL = 'https://developer.elia.gg';
+    const __ELIA_EXPRESS_PAY_BASE_URL = 'http://localhost';
     var currency = $('#currency').val();
     var value = $('#Total').val();
     $("#devise").text(currency);
@@ -48,6 +49,7 @@ $(document).ready(function ($) {
 
     function expressCheckoutInit() {
         eliaExpressPay.onClose(backToStore);
+        
         eliaExpressPay.partnerKey = 'nYkiBAdGFY';
         eliaExpressPay.integrationId = '605ba25c2fc0302db1e12a5b';
 
@@ -62,7 +64,7 @@ $(document).ready(function ($) {
         eliaExpressPay.addInputOne = 'false';
         eliaExpressPay.addInputOneTitle = 'Nickname';
         eliaExpressPay.addInputTwo = 'false';
-        eliaExpressPay.addInputTwoTitle = 'e-mail';
+        eliaExpressPay.addInputTwoTitle = 'E-mail';
         eliaExpressPay.paymentMessage = 'Verify your purchase value before confirm';
         eliaExpressPay.confirmationMessage = 'Thanks for your support!';
         eliaExpressPay.urlSuccess = __ELIA_EXPRESS_PAY_BASE_URL + '/demov2/index.php';
