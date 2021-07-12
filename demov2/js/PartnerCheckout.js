@@ -47,6 +47,7 @@ $(document).ready(function ($) {
     ;
 
     function expressCheckoutInit() {
+        eliaExpressPay.onClose(backToStore);
         eliaExpressPay.partnerKey = 'nYkiBAdGFY';
         eliaExpressPay.integrationId = '605ba25c2fc0302db1e12a5b';
 
@@ -72,6 +73,10 @@ $(document).ready(function ($) {
         if (mode !== null && mode !== undefined) {
             eliaExpressPay.mode = mode;
         }
+    }
+    
+    function backToStore(event) {
+        $('#eliaexpresspaycontainer').fadeOut();
     }
 
 
@@ -102,17 +107,17 @@ $(document).ready(function ($) {
         $("#devise").text(currency);
         exchangeRate(currency, value);
     });
+    
+    $('#eliaExpressPay').click(function(){
+        eliaExpressPay.init('eliaexpresspaycontainer');
+    });
 
-    $('#eliaExpressPay').click(function () {
-        eliaExpressPay.init('payment');
+    $('#eliaexpresspaycontainer').click(function () {
+        $('#eliaexpresspaycontainer').fadeOut();
     });
-    
-    $('#payment').click(function(){
-        $('#payment').fadeOut();
-    });
-    
-    $("#show-payment").click(function(e){
+
+    $("#show-payment").click(function (e) {
         e.preventDefault();
         $('#eliaExpressPay').fadeIn();
-    })
+    });
 });

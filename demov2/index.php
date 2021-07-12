@@ -209,10 +209,7 @@ DEALINGS IN THE SOFTWARE.
                                             </form>
                                     </div>
  
-                                    <div id='payment' style='position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);display: none;'>
-                                        <p><button type='button' class='btn btn-sm btn-primary'>x</button></p>
-                                        <iframe id='expresspaycontainer' style='width:400px;height: 600px; border: none;display: none' scrolling="no" ></iframe>
-                                    </div>                                    
+                                    <div id='eliaexpresspaycontainer' style="height:650px;width:400px"></div>                                            
                                 </div>
                             </section>  
                         </main>
