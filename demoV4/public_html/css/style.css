@@ -1,0 +1,444 @@
+body {
+    background-color: #fff;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.main-container {
+    background-color: #0b2f5d;
+    height: 100vh;
+    width: 100%;
+}
+
+.main-banner {
+    background-image: url(../assets/fifa.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    position: relative;
+}
+
+.banner-content {
+    position: absolute;
+    top: 40%;
+}
+.banner-content h1 {
+    color: white;
+    font-size: 50px;
+    font-weight: 600;
+    margin-left: 150px;
+}
+
+.banner-content p {
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    margin-left: 150px;
+}
+
+.navigation-bar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background-color: #000;
+}
+
+.navigation-container {
+    position: relative;
+    width: 80%;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.navigation-bar .navigation-container ul {
+    padding: 0px;
+    display:inline;
+    text-decoration: none;
+    float: right;
+}
+
+.navigation-bar .navigation-container ul li {
+    list-style: none;
+    display: inline;
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 100;
+    margin-right: 15px;
+}
+
+.navigation-bar .navigation-container ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    margin-top: 15px;    /* if you want it vertically middle of the navbar. */
+}
+
+.fifa-store {
+    position: relative;
+    background-color: #fff;
+    height: 400px;
+    width: 100%;
+}
+
+.fifa-store h1 {
+    font-size: 40px;
+    font-weight: 400;
+    text-align: center;
+    color: #000;
+}
+
+.packs-container {
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+}
+#pack-img {
+    width: 150px;
+    padding: 15px;
+}
+
+#pack-img:hover {
+    transform: scale(1.03);
+}
+
+.main {
+    background: linear-gradient(180deg, #9b0ebb 60%, #17aab9);
+    color: white;
+    font-weight: 400;
+    height: 800px;
+    min-width: 300px;
+    align-items: center;
+}
+
+.title h1 {
+    color: white;
+    font-size: 30;
+    text-align: center;
+}
+
+.authenticateButtonCssClass {
+    background-color: #0b2f5d;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.cancelButtonCssClass {
+    background-color: #0b2f5d;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.payButtonCssClass {
+    background-color: #0b2f5d;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.inputFieldCss {
+    background-color: #d6d0d02a;
+    width: 100%;
+    height: 50px;
+    border: 'white';
+    border-radius: 2px;
+}
+
+.inputFieldCss {
+    background-color: #d6d0d02a;
+    width: 100%;
+    height: 50px;
+    border: 'white';
+    border-radius: 2px;
+  }
+
+.passwordFieldCssClass {
+    background-color: #d6d0d02a;
+    width: 100%;
+    height: 50px;
+    border: 'white';
+    border-radius: 2px;
+}
+
+.totalAmountUSDFieldCssClass {
+    background-color: #d6d0d02a;
+    width: 100px;
+    height: 50px;
+}
+
+.totalAmountFieldCssClass {
+    background-color: #d6d0d02a;
+    width: 80px;
+    height: 50px;
+}
+
+.currencyFieldCssClass {
+    background-color: '#d6d0d02a';
+    width: 70px;
+    height: 50px;
+}
+
+.btn-link{
+    background-color: #0b2f5d;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+
+
+
+.pay-button {
+    width: 110px;
+    height: 45px;
+    background-color: #09bd36;
+    border-radius: 5px;
+}
+.container {
+    width: 70%;
+    margin: 0 auto;
+    padding: 15px;
+    height: auto;
+    background-color: #fff;
+    display: flex;
+  }
+  
+
+  /* Columns */
+  .left-column {
+    width: 65%;
+    position: relative;
+    text-align: center;
+  }
+  
+  .right-column {
+    width: 35%;
+    margin-top: 60px;
+  }
+  
+  
+  /* Left Column */
+  .left-column img {
+    width: 300px;
+    opacity: 1;
+    margin-top: 100px;
+    transition: all 0.3s ease;
+  }
+  
+  .left-column img.active {
+    opacity: 1;
+  }
+  
+  
+  /* Right Column */
+  
+  /* Product Description */
+  .product-description {
+    border-bottom: 1px solid #E1E8EE;
+    margin-bottom: 20px;
+  }
+  .product-description span {
+    font-size: 12px;
+    color: #358ED7;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .product-description h1 {
+    font-weight: 300;
+    font-size: 52px;
+    color: #000;
+    letter-spacing: -2px;
+  }
+  .product-description p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #000;
+    line-height: 24px;
+  }
+  
+  /* Product Configuration */
+  .product-color span,
+  .cable-config span {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+  
+  /* Product Color */
+  .product-color {
+    margin-bottom: 30px;
+  }
+  
+  .color-choose div {
+    display: inline-block;
+  }
+  
+  .color-choose input[type="radio"] {
+    display: none;
+  }
+  
+  .color-choose input[type="radio"] + label span {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: -1px 4px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  .color-choose input[type="radio"] + label span {
+    border: 2px solid #FFFFFF;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.33);
+  }
+  
+  .color-choose input[type="radio"]#red + label span {
+    background-color: #C91524;
+  }
+
+  .color-choose input[type="radio"]#bronze + label span {
+    background-color: rgb(190, 87, 28);
+  }
+
+  .color-choose input[type="radio"]#premium + label span {
+    background-color: rgb(190, 28, 77);
+  }
+
+
+  .color-choose input[type="radio"]#gold + label span {
+    background-color: #d4bf02;
+  }
+
+  .color-choose input[type="radio"]#silver + label span {
+    background-color: #6b6b6b;
+  }
+
+
+  .color-choose input[type="radio"]#blue + label span {
+    background-color: #314780;
+  }
+  .color-choose input[type="radio"]#black + label span {
+    background-color: #323232;
+  }
+  
+  .color-choose input[type="radio"]:checked + label span {
+    background-image: url(images/check-icn.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  /* Cable Configuration */
+  .cable-choose {
+    margin-bottom: 20px;
+  }
+  
+  .cable-choose button {
+    border: 2px solid #E1E8EE;
+    border-radius: 6px;
+    padding: 13px 20px;
+    font-size: 14px;
+    color: #5E6977;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all .5s;
+  }
+  
+  .cable-choose button:hover,
+  .cable-choose button:active,
+  .cable-choose button:focus {
+    border: 2px solid #86939E;
+    outline: none;
+  }
+  
+  .cable-config {
+    border-bottom: 1px solid #E1E8EE;
+    margin-bottom: 20px;
+  }
+  
+  .cable-config a {
+    color: #358ED7;
+    text-decoration: none;
+    font-size: 12px;
+    position: relative;
+    margin: 10px 0;
+    display: inline-block;
+  }
+  .cable-config a:before {
+    content: "?";
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 2px solid rgba(53, 142, 215, 0.5);
+    display: inline-block;
+    text-align: center;
+    line-height: 16px;
+    opacity: 0.5;
+    margin-right: 5px;
+  }
+  
+  /* Product Price */
+  .product-price {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+  
+  .product-price span {
+    font-size: 26px;
+    font-weight: 300;
+    color: #000;
+    margin-right: 20px;
+  }
+  
+  .cart-btn {
+    display: inline-block;
+    background-color: #7DC855;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px 30px;
+    transition: all .5s;
+  }
+  .cart-btn:hover {
+    background-color: #64af3d;
+  }
+  
+  /* Responsive */
+  @media (max-width: 940px) {
+    .container {
+      flex-direction: column;
+      margin-top: 60px;
+    }
+  
+    .left-column,
+    .right-column {
+      width: 100%;
+    }
+  
+    .left-column img {
+      width: 300px;
+      right: 0;
+      top: -65px;
+      left: initial;
+    }
+  }
+  
+  @media (max-width: 535px) {
+    .left-column img {
+      width: 220px;
+      top: -85px;
+    }
+  }
+  
