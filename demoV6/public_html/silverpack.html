@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Fifa Store - subscription test</title>
+        <script src="https://eliaexpresspay.elia.gg/js/eliaexpresspay.js" type="text/javascript"></script>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+        <!-- CSS -->
+        <link href="css/style.css" rel="stylesheet">
+        <meta name="robots" content="noindex,follow" />
+
+    </head>
+
+    <body>
+        <div class="navigation-bar">
+            <div class="navigation-container">
+                <a href="index.html"><img src="assets/fifa.svg" style="width: 250px;"></a>
+                <ul>
+                    <li><a href="#">Games</a></li>
+                    <li><a href="#">Powered By Football</a></li>
+                    <li><a href="#">News & Updates</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Competitive Fifa</a></li>
+                </ul>
+            </div>
+        </div>
+        <main class="container">
+            <!-- Left Column / Headphones Image -->
+            <div class="left-column">
+                <img src="assets/pack4.png" style="z-index: 9999;">
+            </div>
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Product Description -->
+                <div class="product-description">
+                    <span>In-Game Player Packs</span>
+                    <h1>SILVER PACK</h1>
+                    <p>The silver pack includes 12 silver players.</p>
+                </div>
+                <!-- Product Configuration -->
+                <div class="product-configuration">
+                    <!-- Product Color -->
+                    <div class="product-color">
+                        <span>Color</span>
+                        <div class="color-choose">
+                            <div>
+                                <input data-image="silver" type="radio" id="silver" name="silver" value="silver" checked>
+                                <label for="silver"><span></span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cable Configuration -->
+                    <div class="cable-config">
+                        <span>Payment Method</span>
+                        <div class="cable-choose">
+                            <button>PayPal</button>
+                            <button>Stripe</button>
+                            <button>Elia</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Pricing -->
+                <div class="product-price">
+                    <span>$10.99</span>
+                    <button class="pay-button" type="button"
+                            onClick="eliaExpressPay.init('eliaexpresspaycontainer')">Pay</button>
+                </div>
+                <div id='eliaexpresspaycontainer' style="height:650px;width:400px" onclick="closeWindow();"></div>
+            </div>
+        </main>
+        <script>
+            initExpressPay();
+
+            function initExpressPay() {
+                eliaExpressPay.partnerKey = 'MDOcF2loO9';
+                eliaExpressPay.integrationId = '610957f9444f31464910b12e';
+                eliaExpressPay.pageTitle = 'Aquatik Esports';
+                eliaExpressPay.checkoutTitle = '';
+                eliaExpressPay.userLogo = 'https://nilabhanand.github.io/express-pay-demoV4/fifa-20-logo.png';
+                eliaExpressPay.authenticationTitle = 'Authentication Section Title';
+                eliaExpressPay.paymentTitle = 'Payment Methods';
+                eliaExpressPay.paymentReturnTitle = 'Payment Confirmation';
+                eliaExpressPay.addInputOne = 'false';
+                eliaExpressPay.addInputOneTitle = 'Input';
+                eliaExpressPay.addInputTwo = 'false';
+                eliaExpressPay.addInputTwoTitle = 'Input';
+                eliaExpressPay.paymentMessage = 'You will receive a confirmation by SMS in the phone number you used to pay';
+                eliaExpressPay.confirmationMessage = 'Thank you! We are looking forward to see you in our event';
+                eliaExpressPay.customCssAddress = 'https://nilabhanand.github.io/express-pay-demoV4/style.css';
+                eliaExpressPay.urlSuccess = 'http://localhost:8383/demov3/index.html';
+                eliaExpressPay.urlCancel = 'http://localhost:8383/demov3/index.html';
+                eliaExpressPay.mode = 'sandbox';
+                eliaExpressPay.integrationType = 'subscription';
+                eliaExpressPay.itemDescription = 'SILVER PACK';
+                eliaExpressPay.planName = 'Premium I';
+
+                eliaExpressPay.onClose(backToStore);
+                exchangeRate('USD', 10.99);
+            }
+
+            function backToStore(event) {
+                document.getElementById('eliaexpresspaycontainer').style.display = 'none';
+            }
+
+            function closeWindow() {
+                document.getElementById('eliaexpresspaycontainer').style.display = 'none';
+            }
+
+            function exchangeRate(currency, value) {
+                eliaExpressPay.originalAmount = value;
+                eliaExpressPay.originalCurrency = currency;
+                var url = 'https://developer.elia.gg/api/ExchangeRate.php?xch=true&currency=' + currency + '&amount=' + value;
+                fetch(url, {
+                    method: "GET"
+                })
+                        .then(response => response.json())
+                        .then(function (data) {
+                            var value = data.convertedValue;
+                            eliaExpressPay.amount = value;
+                            if (eliaExpressPay.amount < 1.00) {
+                                alert("This value is less than USD $1.00, please choose other currency");
+                            }
+                        });
+            }
+
+        </script>
+
+        <!-- Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+        <script src="script.js" charset="utf-8"></script>
+    </body>
+
+</html>
